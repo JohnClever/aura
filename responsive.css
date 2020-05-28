@@ -14,12 +14,12 @@
         box-sizing: border-box;
         min-height: 1000px;
         font-family: sans-serif;
-        /* overflow-x: hidden; */
+        /* overflow: hidden !important; */
     }
     
     header{ 
         width: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
 
     }
     header .navbar{
@@ -114,7 +114,7 @@
     }
     .header_content .content_details h3{
        position: absolute;
-       font-size: 4em;
+       font-size: 2em;
        font-weight: 900;
        font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
        letter-spacing: 3px;
@@ -128,6 +128,7 @@
     
     .header_content .content_details span{
        position: absolute;
+       width: 60%;
        margin-top: 1em;
        top: 48%;
        left: 10%;

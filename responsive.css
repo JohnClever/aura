@@ -158,7 +158,7 @@
         overflow: hidden;
         transition: .6s;
         left: 50%;
-        transform: translateX(-50%);
+        /* transform: translateX(-50%); */
     }
     .img_slider .image_slide{
         position: absolute;

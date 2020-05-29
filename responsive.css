@@ -210,14 +210,14 @@
         position: absolute;
         width: 100%;
         min-height: 100vh;
-       
+       background: #000;
     }
     
     section .about{
        padding-top: 50px;
         width: 100%;
         position: absolute;
-        /* background: red; */
+        background: red;
         text-align: center;
         height: 100vh;
     }

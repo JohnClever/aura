@@ -206,8 +206,8 @@
     }
     
     section{
-        margin-top: 650px;
-        
+        /* margin-top: 650px;   */
+        position: absolute;
         width: 100%;
         min-height: 100vh;
        

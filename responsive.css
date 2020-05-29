@@ -1,4 +1,4 @@
-@media (max-width: 500px){
+@media (max-width: 1000px){
     *{
         margin: 0;
         padding: 0;
@@ -150,7 +150,7 @@
     .header_content .content_image .slider{
         display: none; 
     }
-    /* .img_slider{
+    .img_slider{
         position: absolute;
         display: block;
         width: 100%;
@@ -159,8 +159,8 @@
         transition: .6s;
         left: 50%;
         transform: translateX(-50%);
-    } */
-    /* .img_slider .image_slide{
+    }
+    .img_slider .image_slide{
         position: absolute;
         width: 348%;
         height: 100%;
@@ -171,9 +171,9 @@
         height: 100%;
         position: relative;
         float: left;
-    } */
+    }
 
-    /* .slideslide_one{
+    .slideslide_one{
         background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url(images/aerial.png);
         background-position: center;
         background-size: cover;
@@ -182,9 +182,9 @@
         background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),url(images/aerial_2.png);
         background-position: center;
         background-size: cover;
-    } */
+    }
 
-    /* @keyframes animate{
+    @keyframes animate{
         0%{
             left: 0;
         }
@@ -203,7 +203,7 @@
         100%{
             left: -200%;
         }
-    } */
+    }
     
     section{
         /* margin-top: 650px;   */
@@ -217,7 +217,7 @@
        /* padding-top: 50px; */
         width: 100%;
         position: absolute;
-        left: 50%;
+        left: 07%;
         transform: translateX(-50%);
         background: red;
         text-align: center;

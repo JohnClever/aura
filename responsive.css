@@ -217,7 +217,8 @@
        /* padding-top: 50px; */
         width: 100%;
         position: absolute;
-        left: -50px;
+        left: 50%;
+        transform: translateX(-50%);
         background: red;
         text-align: center;
         height: 100vh;

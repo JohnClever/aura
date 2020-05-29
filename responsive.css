@@ -214,9 +214,10 @@
     }
     
     section .about{
-       padding-top: 50px;
+       /* padding-top: 50px; */
         width: 100%;
         position: absolute;
+        left: -50px;
         background: red;
         text-align: center;
         height: 100vh;

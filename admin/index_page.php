@@ -9,7 +9,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
         <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 
-        <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
         <link rel="stylesheet" href="css/fontawesome/css/all.css">
         <link rel="stylesheet" href="DataTables/datatables.css">

@@ -13,7 +13,6 @@
     />
     <meta name="description" content="ArchitectUI HTML Bootstrap 4 Dashboard Template">
 
-    <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" href="css/YouTubePopUp.css">
     <link src="DataTables/datatables.css" rel="stylesheet">
@@ -78,7 +77,6 @@
                                     </div>
                                     <div class="divider row"></div>
                                     <div class="d-flex align-items-center">
-                                        <!-- <div class="ml-auto"><a href="javascript:void(0);" class="btn-lg btn btn-link">Recover Password</a> -->
                                             <button class="btn btn-primary btn-lg">Login to Dashboard</button>
                                         </div>
                                     </div>

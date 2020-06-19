@@ -70,12 +70,12 @@ body:after {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
   .btn.btn-primary {
-    background: #2250fc;
-    border-color: #2250fc;
+    background: rgba(255, 217, 0, 0.9);
+    border-color: rgba(255, 217, 0, 0.9);
     color: #fff; }
     .btn.btn-primary:hover {
-      background: #0333e8;
-      border-color: #0333e8;
+      background: gold;
+      border-color: gold;
       color: #fff; }
     .btn.btn-primary.btn-black--hover:hover {
       background: #666666;
@@ -1805,7 +1805,7 @@ figure figcaption {
     right: 10px;
     bottom: 10px;
     left: 10px;
-    background: #2250fc;
+    background: gold;
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out; }

@@ -1,4 +1,11 @@
+<?php 
+  session_start();
+  if(!isset($_SESSION['fname']))
+      header('location: index.html?signFrst=1');
+    require_once 'scripts/functions.php';
 
+
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -24,7 +31,7 @@
         <script src="js/form.js"></script>
     
 
-        <title>Welcome  <!-- php echo name clean the name its default--> Jay-Tech</title>
+        <title>Welcome <?php echo $_SESSION['lname'] ?></title>
     </head>
     <body>
     <style>
@@ -99,13 +106,15 @@
                                                                             alt="">
                                                                     </div>
                                                                     <div class="widget-content-left">
-                                                                        <div class="widget-heading"> <!-- php echo name clean the name its default--> Jay-Tech</div>
+                                                                        <div class="widget-heading"> <!-- php echo name clean the name its default--> <?php echo $_SESSION['fname'].' '.$_SESSION['lname']?></div>
                                                                         <div class="widget-subheading opacity-8">A short profile description
                                                                         </div>
                                                                     </div>
                                                                     <div class="widget-content-right mr-2">
+                                                                        <a href="scripts/logout.php">
                                                                         <button class="logout btn-pill btn-shadow btn-shine btn btn-focus">Logout
                                                                         </button>
+                                                                      </a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -118,7 +127,7 @@
                                     </div>
                                     <div class="widget-content-left  ml-3 header-user-info">
                                         <div class="widget-heading">
-                                           <!-- php echo name clean the name its default--> Jay-Tech
+                                           <!-- php echo name clean the name its default--> <?php echo $_SESSION['fname'].' '.$_SESSION['lname']?>
                                         </div>
                                         <div class="widget-subheading">
                                             Admin
@@ -189,20 +198,27 @@
                                         </a>
                                         <ul>
                                             <li>
-                                                <a class="data_tf"">
-                                                    <i class="metismenu-icon"></i>
-                                                    Messages
-                                                </a>
-                                            </li>
-                                            <li>
                                                 <a class="data_sf">
                                                     <i class="metismenu-icon">
                                                     </i>Images
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a class="data_tf">
+                                                    <i class="metismenu-icon"></i>
+                                                    FAQs
+                                                </a>
+                                            </li>
                                             
-                                        </ul>
+                                      </ul>
                                     </li>
+                                  <!--  <li>            An upgrade for version 2.0.0
+                                        <a href="#">
+                                            <i class="metismenu-icon">&#8226;</i>
+                                               Account Settings
+                                            <i class="metismenu-state-icon">&#8595;</i>
+                                        </a> 
+                                    </li>  -->
                                 </ul>
                             </div>
                         </div>
@@ -240,10 +256,10 @@
                 <div class="card mb-3 widget-chart widget-chart2 text-left">
                     <div class="widget-chart-content">
                         <div class="widget-chart-flex">
-                            <div class="widget-title">Messages</div>
+                            <div class="widget-title">Unread Messages</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span ><!-- php number count clean the zero its default--> <?php echo countUnrdMsgs(); ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -255,7 +271,7 @@
                             <div class="widget-title">FAQs</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php echo countFaqs(); ?> </span></div>
                         </div>
                     </div>
                 </div>
@@ -264,10 +280,10 @@
                 <div class="card mb-3 widget-chart widget-chart2 text-left">
                     <div class="widget-chart-content">
                         <div class="widget-chart-flex">
-                            <div class="widget-title">Events</div>
+                            <div class="widget-title">Gallery</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php echo photoCount(); ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -314,19 +330,19 @@
                                     <li class="nav-item">
                                         <a style="width: 200px" class="data_d nav-link">
                                         <i class="nav-link-icon fa fa-hand-point-right"> </i><span>FAQs</span>
-                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"> <!-- php number count clean the zero its default--> 0</div>
+                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"> <!-- php number count clean the zero its default--> <?php echo countFaqs(); ?> </div>
                                         </a>
                                    </li>
                                    <li class="nav-item">
                                         <a style="width: 200px" class="data_d nav-link">
-                                        <i class="nav-link-icon fa fa-hand-point-right"> </i><span>Massages</span>
-                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> 0</div>
+                                        <i class="nav-link-icon fa fa-hand-point-right"> </i><span>Messages</span>
+                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo countUnrdMsgs(); ?></div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a style="width: 200px" class="data_d nav-link">
-                                        <i class="nav-link-icon fa fa-hand-point-right"> </i><span>Events</span>
-                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> 0</div>
+                                        <i class="nav-link-icon fa fa-hand-point-right"> </i><span>Gallery</span>
+                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo photoCount(); ?></div>
                                         </a>
                                     </li>
                                     <li class="nav-item">

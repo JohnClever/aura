@@ -60,18 +60,18 @@
                                 <span class="mess err"></span>
                             <div class="divider row"></div>
                             <div>
-                                <form class="form" method="post" action="">
+                                <form class="form" method="post" action="scripts/auth.php">
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="exampleEmail" class="">Email</label>
-                                                <input name="user_n" id="exampleEmail" placeholder="Username here..." type="text" class="form-control">
+                                                <input name="usn" id="exampleEmail" placeholder="Username here..." type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="examplePassword" class="">Password</label>
-                                                <input name="pass_n" id="examplePassword" placeholder="Password here..." type="password" class="form-control">
+                                                <input name="pwd" id="examplePassword" placeholder="Password here..." type="password" class="form-control">
                                             </div>
                                         </div>
                                     </div>

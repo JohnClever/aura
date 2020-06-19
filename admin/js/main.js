@@ -27,22 +27,19 @@ $(document).ready(function() {
 
  //......................Forms........................//
 
-        $(".data_tf").click(function(event) {
-                event.preventDefault();
-                $(".app-main__inner").load("pages/message_form.php");
-        })
-
         $(".data_sf").click(function(event) {
                 event.preventDefault();
                 $(".app-main__inner").load("pages/image_form.php");
         })
 
+        $(".data_tf").click(function(event) {
+                event.preventDefault();
+                $(".app-main__inner").load("pages/faq_form.php");
+        })
+
        
         
-  var a = 2;
-  if (a === 4) {
-          
-  }
+
 
         
 

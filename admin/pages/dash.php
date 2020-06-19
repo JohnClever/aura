@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['fname']))
+        header('location: index.html?signFrst=1');
+        require_once '../scripts/functions.php';
+
+
+?>
+
 <div class="app-page-title">
 
     <div class="page-title-wrapper">
@@ -21,10 +30,10 @@
                 <div class="card mb-3 widget-chart widget-chart2 text-left">
                     <div class="widget-chart-content">
                         <div class="widget-chart-flex">
-                            <div class="widget-title">Messages</div>
+                            <div class="widget-title">Unread Messages</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php echo countUnrdMsgs(); ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +45,7 @@
                             <div class="widget-title">FAQs</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php echo countFaqs(); ?>  </span></div>
                         </div>
                     </div>
                 </div>
@@ -45,10 +54,10 @@
                 <div class="card mb-3 widget-chart widget-chart2 text-left">
                     <div class="widget-chart-content">
                         <div class="widget-chart-flex">
-                            <div class="widget-title">Events</div>
+                            <div class="widget-title">Gallery</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><?php echo photoCount();?></span></div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +69,7 @@
                             <div class="widget-title">Comments</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default-->  0 </span></div>
 
                         </div>
                     </div>

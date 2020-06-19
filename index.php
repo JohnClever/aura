@@ -1,3 +1,4 @@
+<?php include_once 'admin/scripts/functions.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -267,31 +268,7 @@
           </div>
         </div>
         <div class="row no-gutters">
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/bird-s-eye-view-of-buildings-under-construction-3525541.jpg" data-fancybox="gal"><img src="images/img/bird-s-eye-view-of-buildings-under-construction-3525541.jpg" alt="Image" class="img-fluid"></a>
-
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/aerial-photo-of-road-between-forest-2948925.jpg" data-fancybox="gal"><img src="images/img/aerial-photo-of-road-between-forest-2948925.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/jules-bss-VW-pFREtl0k-unsplash.jpg" data-fancybox="gal"><img src="images/img/jules-bss-VW-pFREtl0k-unsplash.jpg" alt="Image" class="img-fluid"></a>
-
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/man-wearing-yellow-tank-top-standing-on-brown-wooden-floor-155986.jpg" data-fancybox="gal"><img src="images/img/man-wearing-yellow-tank-top-standing-on-brown-wooden-floor-155986.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/mountains-with-crepuscular-ray-1403550.jpg" data-fancybox="gal"><img src="images/img/mountains-with-crepuscular-ray-1403550.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/person-holding-gray-and-black-quadcopter-drone-2271568.jpg" data-fancybox="gal"><img src="images/img/person-holding-gray-and-black-quadcopter-drone-2271568.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/view-of-factory-against-blue-sky-257700.jpg" data-fancybox="gal"><img src="images/img/view-of-factory-against-blue-sky-257700.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/time-lapse-photo-of-water-falls-in-the-forest-3715436.jpg" data-fancybox="gal"><img src="images/img/time-lapse-photo-of-water-falls-in-the-forest-3715436.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/three-yellow-excavators-near-front-end-loader-1238864.jpg" data-fancybox="gal"><img src="images/img/three-yellow-excavators-near-front-end-loader-1238864.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/silhouette-of-men-in-construction-site-during-sunset-176342.jpg" data-fancybox="gal"><img src="images/img/silhouette-of-men-in-construction-site-during-sunset-176342.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/shallow-focus-photo-of-person-holding-gray-quadcopter-drone-2271587.jpg" data-fancybox="gal"><img src="images/img/shallow-focus-photo-of-person-holding-gray-quadcopter-drone-2271587.jpg" alt="Image" class="img-fluid"></a>
-          
-            <a class="col-6 col-md-6 col-lg-4 col-xl-3 gal-item d-block" data-aos="fade-up" data-aos-delay="100" href="images/img/rice-field-terraces-2892013.jpg" data-fancybox="gal"><img src="images/img/rice-field-terraces-2892013.jpg" alt="Image" class="img-fluid"></a>
-
+        <?php echo displayPhotos('images/img');?>
         </div>
       </div>
     </section>
@@ -387,7 +364,7 @@
       <div class="container">
         <div class="row no-gutters">
           <div class="col-lg-6 bg-primary">
-            <form action="#" class="p-5 contact-form">              
+            <form action="admin/scripts/contact.php" method="post" class="p-5 contact-form">              
               <h2 class="h4 mb-5 heading">Contact Form</h2> 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">

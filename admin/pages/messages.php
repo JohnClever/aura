@@ -1,4 +1,12 @@
-         
+<?php 
+    session_start();
+    if(!isset($_SESSION['fname']))
+        header('location: ../../index.html?signFrst=1');
+        require_once '../scripts/functions.php';
+
+
+?>
+ 
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
@@ -17,35 +25,29 @@
     <div class="card-body">
     <script src="assets\scripts\main.cba69814a806ecc7945a.js"></script>
             <script src="js/form.js"></script>
-            <div style="float: right; margin-right: 10%;" class="search-wrapper">
-                <div class="input-holder">
-                    <input id="search" type="text" class="search-input" placeholder="Type to search">
-                    <button class="search-icon"><span></span></button>
-                </div>
-                <button class="close"></button>
+            <div >
+                <button style="margin-bottom: 0.5em; padding: 0 12px;" class="btn btn-danger float-left" form="deleteMsgs" name="deleteMsgs"><i class="fa fa-trash fa-2x"></i></button>
             </div>
         <table style="width: 100%;" id="table" class="table table-hover table-striped table-bordered">
+            
             <thead>
             <tr>
+                <th></th>
                 <th>Date</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Subject</th>
                 <th>Message</th>
+                
             </tr>
             </thead>
             <tbody>
-               <!--php echo details -->
+              <form method='post' action='scripts/delete.php' id='deleteMsgs'>
+               <?php echo msgs();
+                     readMsgs();
+                ?>
+               </form>
             </tbody>
-            <tfoot>
-            <tr>
-                <th>Date</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Subject</th>
-                <th>Message</th>
-            </tr>
-            </tfoot>
         </table>
     </div>
 </div>

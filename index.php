@@ -5,7 +5,7 @@
     <title>Aura</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
-    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700, 900|Vollkorn:400i" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="css/faqs.css">
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" id="home-section">
   
@@ -359,7 +360,8 @@
           </div>           
         </div>
       </div>
-    </section>   
+    </section>  
+   
     <section class="" id="contact-section">
       <div class="container">
         <div class="row no-gutters">
@@ -434,9 +436,30 @@
         <div class="row">
           <div class="col-md-9">
             <div class="row">
-              <div class="col-md-5">
-                <h2 class="footer-heading mb-4">About Us</h2>
-                <p>We assist our customers with reliable high quality, fast and affordable data from the air in the fields of engineering and arts. With our UAVs, we provide high-resolution orthomosaics, detailed 3D models. </p>
+              <div class="col-md-6">
+                <h2 class="footer-heading mb-4">FAQs</h2>
+                <div id="accordion">
+                <p>
+                <button class="jay-btn" type="button" data-toggle="collapse" data-target="#collapseFaqs" aria-expanded="false" aria-controls="collapseExample">
+                Who built this stunning website?
+                </button>
+              </p>
+              <div class="collapse" id="collapseFaqs">
+                <div class="card card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+              </div>
+              <p>
+                <button class="jay-btn" type="button" data-toggle="collapse" data-target="#collapseFaqs1" aria-expanded="false" aria-controls="collapseExample">
+                Is bismark a good boy?
+                </button>
+              </p>
+              <div class="collapse" id="collapseFaqs1">
+                <div class="card card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+              </div>
+              </div>
               </div>
               <div class="col-md-3 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
@@ -497,5 +520,6 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>  
   <script src="js/main.js"></script>
+  
   </body>
 </html>

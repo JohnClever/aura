@@ -10,7 +10,6 @@
 <body>
 
   <div class="accordian">
-
   	  <div class="card">
   	  	  <div class="card-header">
   	  	  	 <h3>Heading One </h3>

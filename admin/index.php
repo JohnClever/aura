@@ -24,7 +24,7 @@
     <script src="js/YouTubePopUp.jquery.js"></script>
     <script src="DataTables/datatables.js"></script>
     <script src="js/form.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -89,5 +89,5 @@
         </div>
 </div>
 <script type="text/javascript" src="assets/scripts/main.cba69814a806ecc7945a.js"></script></body>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>

@@ -1,4 +1,4 @@
-  <?php 
+      <?php 
     session_start();
     if(!isset($_SESSION['fname']))
         header('location: ../../index.html?signFrst=1');
@@ -27,7 +27,7 @@
             <script src="js/form.js"></script>
            
             <div >
-                <button style="margin-bottom: 0.5em; padding: 0 20px;" class="btn btn-danger float-left" form="deleteFaqs" name="deleteFaqs"><i class="fa fa-trash fa-2x"></i></button>
+                <button style="margin-bottom: 0.5em; padding: 0 12px;" class="btn btn-danger float-left" form="deleteFaqs" name="deleteFaqs"><i class="fa fa-trash fa-2x"></i></button>
             </div>
             
         <table style="width: 100%;" id="table" class="table table-hover table-striped table-bordered">
@@ -49,5 +49,29 @@
         </table>
     </div>
 </div>
+<script>
+    $('.btn-danger').on('click',function(e){
+        e.preventDefault();
+        swal({
+        title: "Are you sure you want to delete Image?",
+        text: "Once deleted, you will not be able to recover this!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        })
+        .then((willDelete) => {
+        if (willDelete) {
+            swal("Success! Image has been deleted!", {
+            icon: "success",
+            });
+        } else {
+            swal("Image hasn't been deleted");
+        }
+        });
+    });
+</script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="js/form.js"></script>
 
                

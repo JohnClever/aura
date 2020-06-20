@@ -142,7 +142,7 @@ function msgs(){
     While($stmt->fetch()){
         $color = $status ? 'red':'';
         $message .=  "<tr style=color:$color;>";
-        $message .= "<td><input type='checkbox' name='msgs[]' value='$mid'/></td>";
+        $message .= "<td><input type='checkbox' name='msgs[]' value='$mid' form='deleteMsgs'/></td>";
         $message .= "<td>".date('jS M, Y g:iA', strtotime($msgDate))."</td>";
         $message .= "<td>".htmlentities($lname)." ".htmlentities($fname)."</td>";
         $message .= "<td>".htmlentities($email)."</td>";
@@ -163,7 +163,7 @@ function faqs(){
 
                 While($stmt->fetch()){
                     $faqs .= "<tr>";
-                    $faqs .= "<td><input type='checkbox' name='faqs[]' value='$fid'/></td>";
+                    $faqs .= "<td><input type='checkbox' name='faqs[]' value='$fid' form='deleteFaqs'/></td>";
                     $faqs .= "<td>".htmlentities($askerName)."</td>";
                     $faqs .= "<td>".htmlentities($question)."</td>";
                     $faqs .= "<td>".htmlentities($answer)."</td>";

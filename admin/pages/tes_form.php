@@ -1,21 +1,21 @@
 
 
 <div class="main-card mb-3 card">
-    <div class="card-body"><h5 class="card-title">Form for FAQ upload</h5>
+    <div class="card-body"><h5 class="card-title">Form for Testimonies</h5>
         <form class="f_testimonies" action="scripts/faq_upload.php" method="post">
             <div class="position-relative form-group">
-                <label for="exampleEmail" class="">Asked By</label>
-                <input name="askerName" id="exampleEmail" placeholder="Name of Asker" type="text" class="form-control" required>
+                <label for="exampleEmail" class="">Name</label>
+                <input name="askerName" id="exampleEmail" placeholder="Name" type="text" class="form-control" required>
             </div>
             <div class="position-relative form-group">
-                <label for="exampleText" class="">Question</label>
+                <label for="exampleText" class="">Comment</label>
                 <input name="question" id="exampleText" class="form-control" type="text" required>
             </div>
-            <div class="position-relative form-group">
-                <label for="answerText" class="">Answer</label>
-                <textarea name="answer" id="answerText" class="form-control" required></textarea>
+            <div class="position-relative form-group e_audpic">
+                <label for="exampleFile" class="">Select a picture,</label>
+                <input name="photo" id="exampleFile" type="file" class="form-control-file" required>
             </div>
-            <a style= "color: #fff" href="" type="submit" name="t_submit" class="mt-1 btn btn-primary t_submit">Upload FAQ</a>
+            <a style= "color: #fff" href="" type="submit" name="" class="mt-1 btn btn-primary ">Upload Image</a>
         </form>
     </div>
 </div>
@@ -27,7 +27,8 @@
     swal({
     position: "top-end",
     type: "success",
-    title: "Answer uploaded",
+    icon: "success",
+    title: "Upload success",
     showConfirmButton: false,
     timer: 3000
     }).then((result) => {

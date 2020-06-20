@@ -29,7 +29,7 @@
         <script src="js/YouTubePopUp.jquery.js"></script>
         <script src="js/main.js"></script>
         <script src="js/form.js"></script>
-    
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <title>Welcome <?php echo $_SESSION['lname'] ?></title>
     </head>
@@ -188,6 +188,8 @@
                                             <li><a href="index.php" class="data_d">Home</a></li>
                                             <li><a class="data_c">Messages</a></li>
                                             <li><a class="data_t">FAQs</a></li>
+                                            <li><a class="data_ts">Testimonies</a></li>
+
                                         </ul>
                                     </li>
                                     <li>
@@ -207,6 +209,12 @@
                                                 <a class="data_tf">
                                                     <i class="metismenu-icon"></i>
                                                     FAQs
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="data_tfs">
+                                                    <i class="metismenu-icon"></i>
+                                                    Testimonies
                                                 </a>
                                             </li>
                                             
@@ -366,6 +374,7 @@
 
         <div class="app-drawer-overlay d-none animated fadeIn"></div>
         <script type="text/javascript" src="assets/scripts/main.cba69814a806ecc7945a.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 
 </html>

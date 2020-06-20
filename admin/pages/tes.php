@@ -6,15 +6,15 @@
 
 
 ?>
- 
+
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
             <div class="page-title-icon">
-                <i class="fa fa-comment">
+                <i class="fa fa-table icon-gradient bg-tempting-azure">
                 </i>
             </div>
-            <div>Table Of Messages
+            <div>Testimonies
                 <div class="page-title-subheading">
                 </div>
             </div>
@@ -25,28 +25,24 @@
     <div class="card-body">
     <script src="assets\scripts\main.cba69814a806ecc7945a.js"></script>
             <script src="js/form.js"></script>
+           
             <div >
-                <button style="margin-bottom: 0.5em; padding: 0 12px;" class="btn btn-danger float-left" form="deleteMsgs" name="deleteMsgs"><i class="fa fa-trash fa-2x"></i></button>
+                <button style="margin-bottom: 0.5em; padding: 0 12px;" class="btn btn-danger float-left" form="deleteTes" name="deleteTes"><i class="fa fa-trash fa-2x"></i></button>
             </div>
-        <table style="width: 100%;" id="table" class="table table-hover table-striped table-bordered">
             
+        <table style="width: 100%;" id="table" class="table table-hover table-striped table-bordered">
             <thead>
             <tr>
                 <th></th>
-                <th>Date</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Subject</th>
-                <th>Message</th>
-                
+                <th>Comment</th>
+                <th>Image</th>
             </tr>
             </thead>
             <tbody>
-              <form method='post' action='scripts/delete.php' id='deleteMsgs'>
-               <?php echo msgs();
-                     readMsgs();
-                ?>
-               </form>
+                <form action='' method='post' id='deleteTes'>
+               <!--php echo details-->
+                </form>
             </tbody>
         </table>
     </div>
@@ -75,3 +71,5 @@
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="js/form.js"></script>
+
+               

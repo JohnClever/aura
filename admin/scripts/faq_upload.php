@@ -12,6 +12,7 @@
          
             if(addFaq($askerName, $question, $answer, $ansby))
                 header('location: ../index_page.php?upldErr=0');
+               
             else
                 header('location: ../index_page.php?upldErr=1');
 

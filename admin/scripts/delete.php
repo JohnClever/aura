@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if($_SERVER['REQUEST_METHOD'] && isset($_SESSION['fname'])){
@@ -11,10 +12,11 @@ if($_SERVER['REQUEST_METHOD'] && isset($_SESSION['fname'])){
             foreach($_POST['adminPhotos'] as $photo){
                  unlink("../../images/img/$photo");
             }
-            header('location: ../index_page.php?unkErr=0');
-        } else
+          header('location: ../index_page.php?unkErr=0');
+			
+        } else{
             header('location: ../index_page.php?unkErr=1');
-        
+		}
     } else if(isset($_POST['deleteFaqs'])){
                 $count = count($_POST['faqs']);
                 $sql = 'DELETE FROM faqs WHERE fid IN(?';

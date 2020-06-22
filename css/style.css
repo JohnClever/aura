@@ -1557,22 +1557,22 @@ body:after {
 .pricing {
   text-align: center; }
   .pricing .price > span {
-    color: #fff; }
+    color: #000; }
     .pricing .price > span > span {
       font-size: 3rem;
-      color: #fff; }
+      color: #000; }
   .pricing ul {
     text-align: left; }
     .pricing ul li {
-      color: #fff;
+      color: #000;
       margin-bottom: 20px; }
       .pricing ul li:before {
-        color: #fff !important; }
+        color: #000 !important; }
     .pricing ul li.remove {
       text-decoration: line-through;
-      color: rgba(255, 255, 255, 0.4); }
+      color: #000; }
       .pricing ul li.remove:before {
-        color: rgba(255, 255, 255, 0.4); }
+        color: #000; }
 
 /* Isotope Transitions
 ------------------------------- */
@@ -1987,7 +1987,7 @@ figure figcaption {
 .block-testimony-1 {
   padding: 20px; }
   .block-testimony-1 blockquote {
-    background: #2293fc;
+    background: gold;
     padding: 30px;
     font-style: italic;
     font-weight: 400;
@@ -2010,7 +2010,7 @@ figure figcaption {
       pointer-events: none; }
     .block-testimony-1 blockquote:before {
       /* border-color: #2293fc; */
-      border-top-color: #2293fc;
+      border-top-color: gold;
       border-width: 15px;
       margin-left: -15px; }
   .block-testimony-1 figure {
@@ -2030,7 +2030,7 @@ figure figcaption {
       height: 2px; }
     .block-testimony-1 figure img {
       max-width: 100px;
-      border: 10px solid #2293fc; }
+      border: 10px solid gold; }
   .block-testimony-1 h3 {
     font-size: 18px; }
 

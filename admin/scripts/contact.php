@@ -1,11 +1,11 @@
 <?php
+session_start();
 require_once 'conn.php';
 require_once 'functions.php';
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $insMsg = 'INSERT INTO messages(fname, lname, email, subject, content, msgDate, status) VALUES(?,?,?,?,?,?,?)';
     $status = 1;
-    
+    $_SESSION['upload']  = -1; 
     if(!empty($_POST['fname']) &&
        !empty($_POST['lname']) && 
        !empty($_POST['email']) && 
@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         date_default_timezone_set('Africa/Accra');
         $msgDate = date('Y-m-d H:i:s', time());
         $stmt = queryGeneral('ssssssi', $insMsg, [$fname, $lname, $email, $subject, $content, $msgDate, $status]);
+        $_SESSION['upload'] = $stmt ? 1:-1; 
         $stmt ? header('location:../../index.php?contactErr=0'):header('location:../../index.php?contactErr=1');
     }else
          header('location:../../index.php?emptyFields=1');
@@ -28,5 +29,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   
     
 }else
-    header('location:../..index.php');
+    header('location:../../index.php');
  

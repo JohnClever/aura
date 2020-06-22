@@ -1,4 +1,11 @@
-<?php include_once 'admin/scripts/functions.php'; ?>
+<?php include_once 'admin/scripts/functions.php'; 
+
+  session_start();
+  ob_start();
+   $upload = 'noMsg';
+      if(isset($_SESSION['upload']))
+        $upload = $_SESSION['upload']; 
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,7 +29,7 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" id="home-section">
   
-
+      <?php echo "<input type='hidden' value='$upload' id='uploadStatus'>";?>
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -52,7 +59,8 @@
                   <a href="#about-section" class="nav-link jay">About</a>
                   <ul class="dropdown">
                     <li><a href="#testimonials-section" class="nav-link jay">Testimonials</a></li>
-                    <li><a href="#gallery-section" class="nav-link jay">Gallery</a></li>                    
+                    <li><a href="#gallery-section" class="nav-link jay">Gallery</a></li>
+                    <li><a href="#faqs-section" class="nav-link jay">FAQs</a></li>
                   </ul>
                 </li>
                 <li><a href="#services-section" class="nav-link jay">Services</a></li>
@@ -210,50 +218,7 @@
         </div>
         <div  data-aos="fade-up" data-aos-delay="200">
           <div class="owl-carousel nonloop-block-13">
-            <div>
-              <div class="block-testimony-1 text-center">                
-                <blockquote class="mb-4">
-                  <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis id facere, blanditiis laboriosam recusandae quam distinctio..&rdquo;</p>
-                </blockquote>
-                <figure>
-                  <img src="" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 text-black">Lorem ipsum.</h3>
-              </div>
-            </div>
-            <div>
-              <div class="block-testimony-1 text-center">
-                <blockquote class="mb-4">
-                  <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus odit, nulla sed quae quaerat autem ratione Lorem ipsum dolor sit amet consectetur..&rdquo;</p>
-                </blockquote>
-                <figure>
-                  <img src="" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 mb-4 text-black">Lorem ipsum.</h3>               
-              </div>
-            </div>
-            <div>
-              <div class="block-testimony-1 text-center">
-                <blockquote class="mb-4">
-                  <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime tenetur dignissimos labore, inventore facilis repudiandae! Distinctio, doloremque..&rdquo;</p>
-                </blockquote>
-                <figure>
-                  <img src="" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 text-black">Lorem ipsum.</h3>                
-              </div>
-            </div>
-            <div>
-              <div class="block-testimony-1 text-center">
-                <blockquote class="mb-4">
-                  <p>&ldquo;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, quos molestiae. Molestias optio iusto quae eius cumque..&rdquo;</p>
-                </blockquote>
-                <figure>
-                  <img src="" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 mb-4 text-black">Lorem ipsum.</h3>                
-              </div>
-            </div>
+             <?php echo visitorTests();?>
           </div>
         </div>
       </div>
@@ -273,10 +238,10 @@
         </div>
       </div>
     </section>
-    <section class="site-section " id="services-section">
+    <section class="site-section" id="services-section">
       <div class="container">
         <div class="row justify-content-center" data-aos="fade-up">
-          <div class="col-lg-6 text-center heading-section mb-5">
+        <div class="col-lg-6 text-center heading-section mb-5">
             <div class="">
               <span class=""><img src="images/img/aura_gde.png" style="width: 20%; height: 20%;" alt=""></span>
             </div>
@@ -285,6 +250,73 @@
               further analyzed in GIS platforms and CAD software for the production of cadastral maps an plans, as well as all sorts of thematic maps, all at a much lower cost with high accuracy.</p>
           </div>
         </div>
+        <div class="row no-gutters">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4 bg-primary p-3 p-md-5" data-aos="fade-up" data-aos-delay="">
+            
+
+            <div class="pricing">
+              <h3 class="text-center text-white text-uppercase">LAND SURVEYING AND MODELLING</h3>
+              <div class="price text-center mb-4 ">
+                <span><span></span></span>
+              </div>
+              <ul class="list-unstyled ul-check success mb-5">             
+                <li>Topographical Surveys</li>
+                <li>Digital Elevation Models</li>
+                <li>(DEMs) and Digital Terrain Models (DTMs)</li>
+                <li>GIS Asset Management</li>
+                <li>Aerial 3D modelling</li>
+                <li>2D and 3D orthomosaics</li>
+              </ul>   
+            </div>
+
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4 bg-dark  p-3 p-md-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing">
+              <h3 class="text-center text-white text-uppercase">CONSTRUCTION AND SITE MONITORING</h3>
+              <div class="price text-center mb-4 ">
+                <span><span></span></span>
+              </div>
+              <ul class="list-unstyled ul-check success mb-5">
+                <li>Volumetric analysis</li>
+                <li>Site inspection</li>
+                <li>Project progress inspection</li>
+                <li>Deformation measurement</li>
+                <li>Asset Management with GIS</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4 bg-primary  p-3 p-md-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing">
+              <h3 class="text-center text-white text-uppercase">AERIAL PHOTOGRAPHY AND VIDEOGRAPHY</h3>
+              <div class="price text-center mb-4 ">
+                <span><span></span></span>
+              </div>
+              <ul class="list-unstyled ul-check success mb-5">
+                <li>Wildlife photography</li>
+                <li>Recreational photography</li>
+                <li>Occasional photography anvideography for graduations, weddings, parties and many more</li>
+                <li>Film making & Documentaries</li>
+                <li>4K video footages</li>
+                <li>Post production</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section " >
+      <div class="container">
+        <!-- <div class="row justify-content-center" data-aos="fade-up">
+          <div class="col-lg-6 text-center heading-section mb-5">
+            <div class="">
+              <span class=""><img src="images/img/aura_gde.png" style="width: 20%; height: 20%;" alt=""></span>
+            </div>
+            <h2 class="text-black mb-2">Our Services</h2>
+            <p>At Aura, we provide 2D and 3D maps of any location which can be
+              further analyzed in GIS platforms and CAD software for the production of cadastral maps an plans, as well as all sorts of thematic maps, all at a much lower cost with high accuracy.</p>
+          </div>
+        </div> -->
         <div class="row">
           <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="">            
             <div class="block_service">
@@ -371,29 +403,29 @@
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
+                  <input type="text" name="fname" id="fname" class="form-control" required>
                 </div>
                 <div class="col-md-6">
                   <label for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
+                  <input type="text" name="lname" id="lname" class="form-control" required>
                 </div>
               </div>
               <div class="row form-group">                
                 <div class="col-md-12">
                   <label for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" name="email" id="email" class="form-control" required>
                 </div>
               </div>
               <div class="row form-group">               
                 <div class="col-md-12">
                   <label for="subject">Subject</label> 
-                  <input type="subject" id="subject" class="form-control">
+                  <input type="subject" name="subject" id="subject" class="form-control" required>
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label for="message">Message</label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                  <textarea name="content" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..." required></textarea>
                 </div>
               </div>
               <div class="row form-group">
@@ -421,7 +453,7 @@
                     <p>+(233) 54 069 4827</p>
                   </li>
                   <li>
-                    <span class="d-block">Email:</span>
+                    <span class="d-block" >Email:</span>
                     <p>info.auraflights@gmail.com</p>
                   </li>
                 </ul>
@@ -437,29 +469,10 @@
           <div class="col-md-9">
             <div class="row">
               <div class="col-md-6">
-                <h2 class="footer-heading mb-4">FAQs</h2>
+                <h2 class="footer-heading mb-4" id="faqs-section">FAQs</h2>
                 <div id="accordion">
-                <p>
-                <button class="jay-btn" type="button" data-toggle="collapse" data-target="#collapseFaqs" aria-expanded="false" aria-controls="collapseExample">
-                Who built this stunning website?
-                </button>
-              </p>
-              <div class="collapse" id="collapseFaqs">
-                <div class="card card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        <?php echo visitorFaqs();?>
                 </div>
-              </div>
-              <p>
-                <button class="jay-btn" type="button" data-toggle="collapse" data-target="#collapseFaqs1" aria-expanded="false" aria-controls="collapseExample">
-                Is bismark a good boy?
-                </button>
-              </p>
-              <div class="collapse" id="collapseFaqs1">
-                <div class="card card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                </div>
-              </div>
-              </div>
               </div>
               <div class="col-md-3 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
@@ -503,15 +516,14 @@
           </div>          
         </div>
       </div>
+      </div>
     </footer>
-    
-  </div>
-  
-   
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js  /bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.countdown.min.js"></script>
   <script src="js/jquery.easing.1.3.js"></script>
@@ -520,6 +532,28 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>  
   <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function(){
+        var upload = parseInt($('#uploadStatus').val());
+        if(upload===1){
+        swal({
+        text: "Message Sent!",
+        icon: "success",
+        button: "OK",
+        timer: "3000",
+        });
+        }else if(upload === -1){
+            swal({
+        text: "message not sent!",
+        icon: "error",
+        button: "OK",
+        });
+        }
+    });
+</script>
   
-  </body>
+</body>
 </html>
+<?php 
+      $_SESSION['upload'] = 'noMsg'; 
+ob_flush();?>

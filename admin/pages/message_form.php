@@ -15,10 +15,5 @@
         </form>
     </div>
 </div>
-<script>
-    $(".form-control").focus(function(){
-        $(".mess").html("");
-        $(".mess").css("color", "gray");
-    })
-</script>
+
 <script src="js/form.js"></script>

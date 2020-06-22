@@ -54,24 +54,24 @@
 <script>
     $('.btn-danger').on('click',function(e){
         e.preventDefault();
+        var attrName = $(this).attr('name');
         swal({
-        title: "Are you sure you want to delete Image?",
+        title: "Are you sure you want to delete?",
         text: "Once deleted, you will not be able to recover this!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
         })
         .then((willDelete) => {
-        if (willDelete) {
-            swal("Success! Image has been deleted!", {
-            icon: "success",
-            });
-        } else {
-            swal("Image hasn't been deleted");
-        }
-        });
+        if(willDelete) {
+            $("#deleteMsgs").submit();  
+        }  
+    })
     });
 </script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="js/form.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="js/form.js"></script>

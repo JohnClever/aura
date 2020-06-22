@@ -66,10 +66,10 @@
                 <div class="card mb-3 widget-chart widget-chart2 text-left">
                     <div class="widget-chart-content">
                         <div class="widget-chart-flex">
-                            <div class="widget-title">Comments</div>
+                            <div class="widget-title">Testimonies</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default-->  0 </span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default-->  <?php echo testNo(); ?> </span></div>
 
                         </div>
                     </div>

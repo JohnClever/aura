@@ -4,15 +4,17 @@
         header('location: ../../index.html?signFrst=1');
         require_once 'functions.php';
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+         $_SESSION['upload']  =  -1; 
         if(isset($_POST['askerName']) && isset($_POST['question']) && isset($_POST['answer'])){
             $askerName = $_POST['askerName'];
             $question = $_POST['question'];
             $answer = $_POST['answer'];
             $ansby = $_SESSION['uid'];
          
-            if(addFaq($askerName, $question, $answer, $ansby))
+            if(addFaq($askerName, $question, $answer, $ansby)){
+                $_SESSION['upload']  = 1; 
                 header('location: ../index_page.php?upldErr=0');
-               
+            }
             else
                 header('location: ../index_page.php?upldErr=1');
 

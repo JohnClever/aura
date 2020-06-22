@@ -15,31 +15,12 @@
                 <label for="answerText" class="">Answer</label>
                 <textarea name="answer" id="answerText" class="form-control" required></textarea>
             </div>
-            <a style= "color: #fff" href="" type="submit" name="t_submit" class="mt-1 btn btn-primary t_submit">Upload FAQ</a>
+            <button style= "color: #fff"  type="submit" name="t_submit" class="mt-1 btn btn-primary t_submit">Upload FAQ</button>
         </form>
     </div>
 </div>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<script>
-    $('.btn-primary').on('click',function(e){
-        e.preventDefault();
-    swal({
-    position: "top-end",
-    type: "success",
-    title: "Answer uploaded",
-    showConfirmButton: false,
-    timer: 3000
-    }).then((result) => {
-        
-    })
-    });
-
-    $(".form-control").focus(function(){
-        $(".mess").html("");
-        $(".mess").css("color", "gray");
-    })
-</script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="js/form.js"></script>

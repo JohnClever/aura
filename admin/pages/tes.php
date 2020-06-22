@@ -27,7 +27,7 @@
             <script src="js/form.js"></script>
            
             <div >
-                <button style="margin-bottom: 0.5em; padding: 0 12px;" class="btn btn-danger float-left" form="deleteTes" name="deleteTes"><i class="fa fa-trash fa-2x"></i></button>
+                <button style="margin-bottom: 0.5em; padding: 0 12px;" class="btn btn-danger float-left" form="deleteTests" name="deleteTests"><i class="fa fa-trash fa-2x"></i></button>
             </div>
             
         <table style="width: 100%;" id="table" class="table table-hover table-striped table-bordered">
@@ -40,7 +40,8 @@
             </tr>
             </thead>
             <tbody>
-                <form action='' method='post' id='deleteTes'>
+                <form action='scripts/delete.php' method='post' id='deleteTests'>
+                    <?php echo adminTests();?>
                <!--php echo details-->
                 </form>
             </tbody>
@@ -50,22 +51,19 @@
 <script>
     $('.btn-danger').on('click',function(e){
         e.preventDefault();
+        var attrName = $(this).attr('name');
         swal({
-        title: "Are you sure you want to delete Image?",
+        title: "Are you sure you want to delete?",
         text: "Once deleted, you will not be able to recover this!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
         })
-        .then((willDelete) => {
+        .then((willDelete ) => {
         if (willDelete) {
-            swal("Success! Image has been deleted!", {
-            icon: "success",
-            });
-        } else {
-            swal("Image hasn't been deleted");
-        }
-        });
+            $("#deleteTests").submit();
+        }  
+    });
     });
 </script>
 <script src="jquery-3.3.1.min.js"></script>

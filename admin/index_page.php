@@ -3,7 +3,7 @@
   if(!isset($_SESSION['fname']))
       header('location: index.html?signFrst=1');
     require_once 'scripts/functions.php';
-
+    ob_start();
 
 ?>
 <!doctype html>
@@ -44,6 +44,17 @@
     } 
 
     </style>
+        <?php $status ='noMsg';
+              $upload = 'noMsg';
+            
+      if(isset($_SESSION['status']))
+        $status = $_SESSION['status'];
+      if(isset($_SESSION['upload']))
+        $upload = $_SESSION['upload']; 
+echo "<input type='hidden' value='$status' id='statusBtn'>";
+echo "<input type='hidden' value='$upload' id='uploadStatus'>";
+
+?>
         <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
             <div class="app-header header-shadow">
                 <div class="app-header__logo">
@@ -267,7 +278,7 @@
                             <div class="widget-title">Unread Messages</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span ><!-- php number count clean the zero its default--> <?php echo countUnrdMsgs(); ?></span></div>
+                            <div class="widget-numbers"><span ><!-- php number count clean the zero its default--> <?php $countUnrdMsgs = countUnrdMsgs(); echo $countUnrdMsgs; ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -279,7 +290,7 @@
                             <div class="widget-title">FAQs</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php echo countFaqs(); ?> </span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php $countFaqs = countFaqs(); echo $countFaqs; ?> </span></div>
                         </div>
                     </div>
                 </div>
@@ -291,7 +302,7 @@
                             <div class="widget-title">Gallery</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php echo photoCount(); ?></span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php $photoCount = photoCount(); echo $photoCount; ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -300,10 +311,10 @@
                 <div class="card mb-3 widget-chart widget-chart2 text-left">
                     <div class="widget-chart-content">
                         <div class="widget-chart-flex">
-                            <div class="widget-title">Comments</div>
+                            <div class="widget-title">Testimonies</div>
                         </div>
                         <div class="widget-chart-flex">
-                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> 0</span></div>
+                            <div class="widget-numbers"><span><!-- php number count clean the zero its default--> <?php $testNo = testNo(); echo $testNo ;?></span></div>
 
                         </div>
                     </div>
@@ -338,25 +349,25 @@
                                     <li class="nav-item">
                                         <a style="width: 200px" class="data_d nav-link">
                                         <i class="nav-link-icon fa fa-hand-point-right"> </i><span>FAQs</span>
-                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"> <!-- php number count clean the zero its default--> <?php echo countFaqs(); ?> </div>
+                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"> <!-- php number count clean the zero its default--> <?php echo $countFaqs; ?> </div>
                                         </a>
                                    </li>
                                    <li class="nav-item">
                                         <a style="width: 200px" class="data_d nav-link">
                                         <i class="nav-link-icon fa fa-hand-point-right"> </i><span>Messages</span>
-                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo countUnrdMsgs(); ?></div>
+                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo $countUnrdMsgs; ?></div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a style="width: 200px" class="data_d nav-link">
                                         <i class="nav-link-icon fa fa-hand-point-right"> </i><span>Gallery</span>
-                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo photoCount(); ?></div>
+                                        <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo $photoCount; ?></div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a style="width: 200px" class="data_c nav-link">
-                                        <i class="nav-link-icon fa fa-hand-point-right"></i><span>Images</span>
-                                            <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> 0</div>
+                                        <i class="nav-link-icon fa fa-hand-point-right"></i><span>Testimonies</span>
+                                            <div style="position: absolute;right: 0;" class="ml-lg badge badge-pill"><!-- php number count clean the zero its default--> <?php echo $testNo;?></div>
                                         </a>
                                     </li>
                                 </ul>
@@ -368,13 +379,53 @@
         </div>
     </div>
 </div>    
-                    </div>
-            </div>
         </div>
-
         <div class="app-drawer-overlay d-none animated fadeIn"></div>
         <script type="text/javascript" src="assets/scripts/main.cba69814a806ecc7945a.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    </body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script>
+        $(document).ready(function(){
+        var status = parseInt($('#statusBtn').val());
+        var upload = parseInt($('#uploadStatus').val());
+        if(status===1){
+        swal({
+        text: "Successfully Deleted!",
+        icon: "success",
+        button: "OK",
+        });
+        } else if(status === -1){
+            swal({
+        text: "Could not be Deleted!",
+        icon: "error",
+        button: "OK",
+        });
+        };
+        if(upload === 1){
+             swal({
+            position: "top-end",
+            type: "success",
+            icon: "success",
+            title: "Successfully Uploaded",
+            showConfirmButton: false,
+            timer: 3000
+            })
+        }else if(upload === -1){
+            swal({
+        text: "Could not be Uploaded!",
+        icon: "error",
+        button: "OK",
+        });
+        }
+    });
+            
+        </script>
+</body>
+        
+        
+
 
 </html>
+<?php $_SESSION['status'] = 'noMsg';
+      $_SESSION['upload'] = 'noMsg'; 
+ob_flush();?>
